@@ -1,43 +1,35 @@
 # Intune-Remediations
-A collection of active Intune Remediation scripts
+The Intune Remediations collection is a set of script packages designed to detect and fix common support issues on user devices. Each script package includes a detection script, a remediation script, and metadata. By deploying these packages through Intune, you can proactively address issues before end-users even notice them, potentially reducing support calls.
 
+## Disable-WindowsAI-Registry
+[Link to script](https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Disable-WindowsAI-Registry)
 
+Used for disabling the KCLM and HKCU registry keys associated with Recall AI for Copilot+ devices.
 
-### Disable-WindowsAI-Registry
-(https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Disable-WindowsAI-Registry)
+## Get-PUA-Protection
+[Link to script](https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Get-PUA-Protection)
 
-Used for Disabling the KCLM and HKCU registry keys associated with Recall AI for Copilot+ Devices
+Used for confirming that PUA Protection is enabled.
 
+## Get-RealTimeBehaviour
+[Link to script](https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Get-RealTimeBehaviour)
 
-### Get-PUA-Protection
-(https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Get-PUA-Protection)
+Used for confirming that Behavior Monitoring is enabled.
 
-Used for Confirming that PUA Protection is Enabled
+## Get-RealTimeProtection
+[Link to script](https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Get-RealTimeProtection)
 
+Used for confirming that Real-Time Monitoring is enabled.
 
-### Get-RealTimeBehaviour
-(https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Get-RealTimeBehaviour)
+## Reset-SoftwareDistributionFolder
+[Link to script](https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Reset-SoftwareDistributionFolder)
 
-Used for Confirming that Behaviour Monitoring is Enabled
+Used for resetting the device's SoftwareDistribution folder by stopping the WUAUSERV service, renaming the 'C:\Windows\SoftwareDistribution' folder to "SoftwareDistribution.old," and then starting the service.
 
+## Reset-SoftwareDistributionFolder-PT2
+[Link to script](https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Reset-SoftwareDistributionFolder-PT2)
 
-### Get-RealTimeProtection
-(https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Get-RealTimeProtection)
-
-Used for Confirming that Real Time Monitoring is Enabled
-
-
-### Reset-SoftwareDistributionFolder
-(https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Reset-SoftwareDistributionFolder)
-
-Used for resetting the devices SoftwareDistribution folder via stopping the WUAUSERV Service, Renaming the 'C:\Windows\SoftwareDistribution' folder to "SoftwareDistribution.old", then starting the WUAUSERV Service.
-
-
-### Reset-SoftwareDistributionFolder-PT2
-(https://github.com/AntoPorter/Intune-Remediations/tree/96619173eea211f678fe360c207b7328f9a47928/Reset-SoftwareDistributionFolder-PT2)
-
-Considered a Cleanup for the Successful deployment of 'Reset-SoftwareDistributionFolder', Deletes 'C:\Windows\SoftwareDistribution.old'
-
+Considered a cleanup step following the successful deployment of 'Reset-SoftwareDistributionFolder,' this script deletes the 'C:\Windows\SoftwareDistribution.old' folder.
 
 # Disclaimer
-These scripts are a collection of community created and my own. Credit to the Microsoft Intune MVP's who have put the effort in to help build and share knowledge within the community.
+These scripts are a collection of community-created and my own. Credit to the Microsoft Intune MVPs who have contributed to building and sharing knowledge within the community.
