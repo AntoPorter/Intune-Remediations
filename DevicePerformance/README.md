@@ -1,8 +1,13 @@
 ## Device Performance
 
-### Get-InactiveUsers
-[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DevicePerformance/Get-InactiveUsers)
-- **Detection**: Checks for any inactive profiles based on a specified time period (requires modification based on your requirements).
+### Get-InactiveUsers-Local
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DevicePerformance/Get-InactiveUsers-Local)
+- **Detection**: Checks for any local inactive profiles based on a specified time period (requires modification based on your requirements).
+- **Remediation**: Removes inactive profiles if detected.
+
+### Get-InactiveUsers-EntraID
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DevicePerformance/Get-InactiveUsers-EntraID)
+- **Detection**: Checks for all inactive profiles (Including Entra ID) based on a specified time period (requires modification based on your requirements).
 - **Remediation**: Removes inactive profiles if detected.
 
 ### Get-LowDiskSpace
