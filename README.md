@@ -7,7 +7,7 @@ The **Intune Remediations** collection is a set of script packages designed to
 
 ## Step-by-Step Guide: Using Microsoft Intune Remediations
 
-For a step by step guide to the use of Microsoft Intune Remediations, please visit my [Blog Post]((https://antoporter.github.io/endpoint/intune/remediations/).
+For a step by step guide to the use of Microsoft Intune Remediations, please visit my [Blog Post](https://antoporter.github.io/endpoint/intune/remediations/).
 
 
 ---
