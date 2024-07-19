@@ -1,9 +1,34 @@
 ## Device Configuration
 
+### Get-CorporateCertificate
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-CorporateCertificate)
+- **Detection**: Checks for a specific certificate is installed (requires modification based on your requirements).
+- **Remediation**: Installs the missing certificate from a file path.
+
+### Get-CorporateVPN
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-CorporateVPN)
+- **Detection**: Checks for a specific VPN Connection is configured (requires modification based on your requirements).
+- **Remediation**: Configures the missing VPN Connection.
+
+### Get-CustomToastNotification
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-CustomToastNotification)
+- **Detection**: An Exit 1, Prompting the Remediation.
+- **Remediation**: Runs a Toast Notification. Update the Group, Title and Notification in the script and Set the Schedule.
+
+### Get-CustomWallpaper
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-CustomWallpaper)
+- **Detection**: Checks for a specific wallpaper is configured (requires modification based on your requirements).
+- **Remediation**: Configures the custom wallpaper.
+
 ### Get-DriveMapping
 [Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-DriveMapping)
 - **Detection**: Checks for a specific mapped drive (requires modification based on your requirements).
 - **Remediation**: Maps the missing drive if it is not located.
+
+### Get-LocalDNSSettings
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-LocalDNSSettings)
+- **Detection**: Checks for a specific DNS Setting on your Ethernet (requires modification based on your requirements).
+- **Remediation**: Configures the Local DNS settings if it is incorrect.
 
 ### Get-TimeZone
 [Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-TimeZone)

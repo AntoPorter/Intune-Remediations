@@ -5,6 +5,11 @@
 - **Detection**: Checks the registry keys used by Windows AI.
 - **Remediation**: Disables the registry keys if they are enabled.
 
+### Get-CustomScript
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/Miscellaneous/Get-CustomScript)
+- **Detection**: Includes only 'Exit 1', which will automatically run the Remediation Script.
+- **Remediation**: Include the contents of your PowerShell Script you wish to run on a schedule.
+
 ### Get-SoftwareDistributionFolder and Get-SoftwareDistributionFolderPT2
 [Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/Miscellaneous/Get-SoftwareDistributionFolder)
 [Link - PT2](https://github.com/AntoPorter/Intune-Remediations/tree/main/Miscellaneous/Get-SoftwareDistributionFolderPT2)

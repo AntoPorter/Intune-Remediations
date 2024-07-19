@@ -10,6 +10,16 @@
 - **Detection**: Checks if CredentialGuard is enabled.
 - **Remediation**: Enables CredentialGuard if it is disabled.
 
+### Get-CustomCompliance-Registry
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceCompliance/Get-CustomCompliance-Registry)
+- **Detection**: Checks for an existing Registry File, considered required for "Compliance" in your environment.
+- **Remediation**: Creates the Registry File specified if the detection cannot find the mentioned registry key.
+
+### Get-CustomCompliance-File
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceCompliance/Get-CustomCompliance-File)
+- **Detection**: Checks for an existing File in a File Path, considered required for "Compliance" in your environment.
+- **Remediation**: Creates the File (and Path) specified if the detection cannot find the mentioned file.
+
 ### Get-DeviceGuard
 [Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceCompliance/Get-DeviceGuard)
 - **Detection**: Checks if DeviceGuard is enabled.
