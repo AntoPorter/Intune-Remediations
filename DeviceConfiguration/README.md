@@ -30,6 +30,16 @@
 - **Detection**: Checks for a specific DNS Setting on your Ethernet (requires modification based on your requirements).
 - **Remediation**: Configures the Local DNS settings if it is incorrect.
 
+### Get-OfficeTemplates
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-OfficeTemplates)
+- **Detection**: Checks the Templates folder for a specific template file within Program Files repo.
+- **Remediation**: Will copy a template file from a network share to the Program Files repo.
+
+### Get-OutlookTemplate
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-OutlookTemplate)
+- **Detection**: Checks the **NormalEmail.dotm** file within AppData associated to Outlook Emails.
+- **Remediation**: Will copy the **NormalEmail.dotm** file from a network share to the AppData repo.
+
 ### Get-TimeZone
 [Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-TimeZone)
 - **Detection**: Checks for a specific Time Zone (requires modification based on your requirements).

@@ -10,6 +10,16 @@
 - **Detection**: Includes only 'Exit 1', which will automatically run the Remediation Script.
 - **Remediation**: Include the contents of your PowerShell Script you wish to run on a schedule.
 
+### Get-GenericRegistryChange
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/Miscellaneous/Get-GenericRegistryChange)
+- **Detection**: Checks for a specified registry key in the environment.
+- **Remediation**: If the registry key is not found, creates the registry key.
+
+### Get-GenericRestartService
+[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/Miscellaneous/Get-GenericRestartService)
+- **Detection**: Includes only 'Exit 1', which will automatically run the Remediation Script.
+- **Remediation**: Will restart the specified service. Example include '**wuauserv**'.
+
 ### Get-SoftwareDistributionFolder and Get-SoftwareDistributionFolderPT2
 [Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/Miscellaneous/Get-SoftwareDistributionFolder)
 [Link - PT2](https://github.com/AntoPorter/Intune-Remediations/tree/main/Miscellaneous/Get-SoftwareDistributionFolderPT2)
