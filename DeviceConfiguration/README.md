@@ -10,11 +10,6 @@
 - **Detection**: Checks for a specific VPN Connection is configured (requires modification based on your requirements).
 - **Remediation**: Configures the missing VPN Connection.
 
-### Get-CustomToastNotification
-[Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-CustomToastNotification)
-- **Detection**: An Exit 1, Prompting the Remediation.
-- **Remediation**: Runs a Toast Notification. Update the Group, Title and Notification in the script and Set the Schedule.
-
 ### Get-CustomWallpaper
 [Link](https://github.com/AntoPorter/Intune-Remediations/tree/main/DeviceConfiguration/Get-CustomWallpaper)
 - **Detection**: Checks for a specific wallpaper is configured (requires modification based on your requirements).

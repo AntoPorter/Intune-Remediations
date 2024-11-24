@@ -1,5 +1,5 @@
 $batteryStatus = Get-WmiObject -Query "Select * from Win32_Battery"
-if ($batteryStatus.EstimatedChargeRemaining -lt 50) {
+if ($batteryStatus.EstimatedChargeRemaining -lt 25) {
     Write-Output "Battery health warning"
     exit 1
 } else {

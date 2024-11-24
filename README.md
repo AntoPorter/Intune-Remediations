@@ -14,5 +14,4 @@ For a step by step guide to the use of Microsoft Intune Remediations, please vis
 
 ## Need Help?
 
-> [!help] 
 > For support or questions, please contact me on [LinkedIn](https://www.linkedin.com/in/anthonyantoporter/).
