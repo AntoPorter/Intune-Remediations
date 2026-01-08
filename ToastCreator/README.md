@@ -21,7 +21,6 @@ Toast Notifications are native Windows alerts that appear in the user's notifica
 - Configure optional action button with URL
 - Set acknowledgement requirements
 - Custom app source/identifier (appears as notification source)
-- Automatic configuration caching for repeated use
 
 ### 2. Real-Time Testing
 - Test notifications locally before deployment
@@ -565,59 +564,6 @@ notepad $env:APPDATA\ToastNotificationConfig.json
 
 ---
 
-## Advanced Topics
-
-### Custom Detection Logic
-
-For Detection + Remediation pairs, you can create sophisticated detection scripts:
-
-**Example: Detect Outdated Software**
-```powershell
-$softwarePath = "C:\Program Files\MyApp\version.txt"
-if (Test-Path $softwarePath) {
-    $version = Get-Content $softwarePath
-    if ([version]$version -lt [version]"2.0.0") {
-        exit 1  # Non-compliant, run remediation (show notification)
-    }
-}
-exit 0  # Compliant, skip remediation
-```
-
-**Example: Detect Security Policy Status**
-```powershell
-$regPath = "HKLM:\Software\Policies\Security"
-$value = Get-ItemProperty -Path $regPath -Name "UpdatesEnabled" -ErrorAction SilentlyContinue
-
-if ($null -eq $value.UpdatesEnabled -or $value.UpdatesEnabled -eq 0) {
-    exit 1  # Not compliant, show notification
-}
-exit 0  # Compliant
-```
-
-### URL Schemes & Actions
-
-Action button URLs can use various schemes:
-
-**HTTP/HTTPS**
-```
-https://company.com/support
-https://portal.azure.com
-```
-
-**Email**
-```
-mailto:support@company.com?subject=Help%20Needed
-```
-
-**Microsoft Specific**
-```
-ms-settings:  (Windows Settings)
-ms-shutdown:  (Shutdown dialog)
-rdp://  (Remote Desktop)
-```
-
----
-
 ## Troubleshooting
 
 ### Notification Not Appearing
@@ -745,31 +691,121 @@ rdp://  (Remote Desktop)
 
 ---
 
-## Roadmap & Future Enhancements
+## Do Not Disturb (Focus Assist) Impact and Workarounds
 
-Potential future additions:
-- [ ] Custom notification templates
-- [ ] Batch import from CSV
-- [ ] Notification scheduling UI
-- [ ] Multi-language support
-- [ ] Custom icon/branding
-- [ ] Notification logging & analytics
-- [ ] Deployment history tracking
-- [ ] A/B testing framework
+Windows Toast Notifications fully respect the user’s Do Not Disturb (DND) and Focus Assist settings. When DND is enabled, either manually, automatically, or through corporate configuration, notifications may not appear on the desktop in real time. This can lead to the impression that a remediation script did not run, even though the notification was successfully delivered.
+
+### Impact on Toast Notifications
+
+- Real time pop ups are suppressed  
+  The toast will not appear on screen while DND is active.
+
+- Notifications are still delivered to Notification Center  
+  Users can open the Notification Center to view and interact with the toast at any time.
+
+- Persistent 10 minute notifications still respect DND  
+  Reminder scenario toasts cannot override DND.
+
+- Action buttons and acknowledgement logic remain functional  
+  Once the user opens the notification from Notification Center, all configured actions behave normally.
+
+### Why This Matters in Enterprise Deployments
+
+- Time sensitive alerts such as security updates, maintenance windows, and password expiry warnings may be missed.
+- IT teams may misinterpret suppressed notifications as script failures.
+- Compliance workflows that rely on user acknowledgement may be delayed.
+- Users may not realise a notification was delivered at all.
 
 ---
 
-## Support & Contribution
+## Workarounds for Corporate Environments
 
-### Issues or Questions?
-- Open an issue in the repository
-- Include notification configuration details
-- Attach error messages/logs
+### 1. User Awareness and Guidance
 
-### Contributing
-- Fork the repository
-- Make improvements
-- Submit pull request with description
+Encourage users to temporarily disable DND when expecting important IT communications:
+
+- Settings → System → Notifications → Turn off Do Not Disturb  
+- Or toggle via Quick Settings in the taskbar.
+
+This is the simplest and most transparent approach.
+
+---
+
+### 2. Notification Center as a Fallback
+
+Even when DND is active:
+
+- The toast is still delivered.
+- It remains visible in Notification Center until dismissed.
+- Action buttons and acknowledgement still work.
+
+You may optionally include a line in your message such as:  
+> “If you do not see this notification immediately, please check your Notification Center.”
+
+---
+
+### 3. Increase Remediation Frequency
+
+For time sensitive or critical notifications:
+
+- Configure the Intune remediation to run daily or hourly.
+- The toast will re appear once DND is off.
+
+This is particularly effective for:
+
+- Compliance reminders  
+- Security patch notifications  
+- Training completion prompts  
+
+---
+
+### 4. Use Detection Logic to Re Notify Until Resolved
+
+When using Detection and Remediation pairs:
+
+- Detection can continue to return non compliant until the user completes the required action.
+- Remediation, the toast, will continue to run even if earlier notifications were suppressed.
+
+This creates a self correcting loop without overwhelming users.
+
+---
+
+### 5. Understand DND Limitations
+
+PowerShell triggered toast notifications cannot bypass DND.  
+Only UWP applications with specific capabilities can request priority or alarm behavior.
+
+Because this tool uses WinRT APIs under a custom AppID:
+
+- It cannot override DND.
+- It remains compliant with Windows UX and enterprise security standards.
+
+---
+
+### 6. Optional: Review Corporate Focus Assist Policies
+
+Some organizations enforce DND automatically during:
+
+- Meetings  
+- Presentation mode  
+- Specific hours  
+- Screen sharing  
+
+If notifications are mission critical, IT can review:
+
+- Group Policy:  
+  `Computer Configuration → Administrative Templates → Windows Components → Focus Assist`
+
+- Intune Settings Catalog:  
+  Focus Assist configuration options
+
+Changes should be made carefully to avoid degrading user experience.
+
+---
+
+### Recommended Documentation Note
+
+> **Important:** Windows Do Not Disturb and Focus Assist may suppress real time toast notifications. If enabled, notifications created by this tool will still be delivered to the Notification Center but may not appear immediately on screen. For time sensitive communications, consider using detection based re notification, increasing remediation frequency, or advising users to temporarily disable Do Not Disturb.
 
 ---
 
