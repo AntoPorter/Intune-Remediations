@@ -86,9 +86,9 @@ Load-Configuration
 
 Write-Host "`n" -ForegroundColor Cyan
 Write-Host "" -ForegroundColor Cyan
-Write-Host "                INTUNE TOAST NOTIFICATION GENERATOR                " -ForegroundColor Cyan
-Write-Host "  Create and Deploy Windows Toast Notifications for Microsoft Intune        " -ForegroundColor Cyan
-Write-Host "                    Created by: Anthony Porter                        " -ForegroundColor Cyan
+Write-Host "                   TOAST NOTIFICATION CREATOR FOR INTUNE                " -ForegroundColor Cyan
+Write-Host "  Create and Export Windows Toast Notifications for Microsoft Intune Remediations      " -ForegroundColor Cyan
+Write-Host "                         Created by: Anthony Porter                        " -ForegroundColor Cyan
 Write-Host "" -ForegroundColor Cyan
 Write-Host "`n" -ForegroundColor Cyan
 
@@ -248,7 +248,7 @@ try {
 $continueLoop = $true
 while ($continueLoop) {
     Write-Host "`n========================================" -ForegroundColor Cyan
-    Write-Host "  Toast Notification Generator for Intune" -ForegroundColor Cyan
+    Write-Host "  Toast Notification Creator for Intune  " -ForegroundColor Cyan
     Write-Host "========================================`n" -ForegroundColor Cyan
 
     Write-Host "Enter Notification Details:" -ForegroundColor Yellow
