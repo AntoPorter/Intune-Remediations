@@ -306,37 +306,7 @@ Export: Remediation Script Only
 
 ---
 
-### Example 2: Conditional Password Expiration Warning
-
-**Business Scenario:**
-Notify only users whose passwords expire within 7 days, reducing false alerts.
-
-**Configuration:**
-```
-Title: Password Expiration Warning
-Message: Your domain password expires in 7 days. Reset it now at [portal].
-App Source: IT Administration
-Action Button: Reset Password (https://company.com/password-reset)
-Duration: 10 minutes
-Export: Detection + Remediation Pair
-```
-
-**Detection Script Logic:**
-```powershell
-# Query Active Directory password expiration
-# Return exit 1 if expiration is within 7 days (run remediation)
-# Return exit 0 if expiration is > 7 days (skip remediation)
-```
-
-**Outcome:**
-- Only affected users receive notification
-- Others don't see unnecessary alerts
-- Reduces notification fatigue
-- Targeted, efficient communication
-
----
-
-### Example 3: Maintenance Window Notification
+### Example 2: Maintenance Window Notification
 
 **Business Scenario:**
 Notify users 24 hours before scheduled maintenance, encouraging graceful shutdown.
@@ -365,7 +335,7 @@ Export: Remediation Script Only
 
 ---
 
-### Example 4: Compliance Training Due
+### Example 3: Compliance Training Due
 
 **Business Scenario:**
 Remind users that annual security training is due, with persistent reminders until completed.
@@ -395,7 +365,7 @@ Export: Detection + Remediation Pair
 
 ---
 
-### Example 5: Software Deployment Ready
+### Example 4: Software Deployment Ready
 
 **Business Scenario:**
 Notify users that optional software is available, with link to request installation.
