@@ -4,6 +4,6 @@ A powerful PowerShell tool for creating and deploying Windows Toast Notification
 
 ## Overview
 
-**The following has now moved over to [AntoPorter/ToastNotifications](https://github.com/AntoPorter/ToastNotifications)**
+**The following has now moved over to [AntoPorter/Intune-ToastNotifications](https://github.com/AntoPorter/Intune-ToastNotifications)**
 
 **The following will remain in this repository as 'Version 1', but all updates will be made to the project in its dedicated Repository**
