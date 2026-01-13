@@ -86,7 +86,7 @@ Load-Configuration
 
 Write-Host "`n" -ForegroundColor Cyan
 Write-Host "" -ForegroundColor Cyan
-Write-Host "                   TOAST NOTIFICATION CREATOR FOR INTUNE                " -ForegroundColor Cyan
+Write-Host "                   TOAST NOTIFICATION CREATOR FOR INTUNE V1                " -ForegroundColor Cyan
 Write-Host "  Create and Export Windows Toast Notifications for Microsoft Intune Remediations      " -ForegroundColor Cyan
 Write-Host "                         Created by: Anthony Porter                        " -ForegroundColor Cyan
 Write-Host "" -ForegroundColor Cyan
